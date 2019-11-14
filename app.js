@@ -11,6 +11,7 @@ var express = require("express"),
 	Comment = require("./models/comment"),
 	User = require("./models/user"),
 	methodOverride = require("method-override"),
+	moment = require("moment"),
 	seedDB = require("./seeds");
 
 var commentRoutes = require("./routes/comments"),
@@ -30,6 +31,8 @@ app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
 //seedDB(); //SEED THE DB
+
+app.locals.moment = require("moment");
 
 //PASSPORT CONFIG
 app.use(require("express-session")({
