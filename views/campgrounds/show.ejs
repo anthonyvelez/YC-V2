@@ -30,14 +30,14 @@
 					<% }; %>
 				</div>
 			</div>
-			<div class="card card-body bg-light pb-0">
+			<div class="card card-body bg-light pb-0 mb-2">
 				<div class="text-right">
 					<a class="btn btn-success" href="/campgrounds/<%= campground._id %>/comments/new">Leave a Review</a>
 				</div>
 				<hr>
 				<% campground.comments.forEach(function(comment){ %>
 				<div class="row">
-					<div class="col-md-12 mb-2">
+					<div class="col-md-12 mb-2 pb-1">
 						<strong><%= comment.author.username %></strong>
 						<span class="float-right"><%= moment(comment.createdAt).fromNow() %></span>
 						<p class="mb-1"><%= comment.text %></p>
